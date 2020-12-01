@@ -1,4 +1,4 @@
-module github.com/deepch/vdk
+module github.com/jonathan727/vdk
 
 go 1.14
 

@@ -17,9 +17,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/deepch/vdk/av"
-	"github.com/deepch/vdk/codec/h264parser"
-	"github.com/deepch/vdk/format/rtsp/sdp"
+	"github.com/jonathan727/vdk/av"
+	"github.com/jonathan727/vdk/codec/h264parser"
+	"github.com/jonathan727/vdk/format/rtsp/sdp"
 )
 
 const (
@@ -487,7 +487,7 @@ func (client *RTSPClient) RTPDemuxer(payloadRAW *[]byte) ([]*av.Packet, bool) {
 			case naluType == 8:
 				client.CodecUpdatePPS(nal)
 			case naluType == 24:
-				client.Println("24 Type need add next version report https://github.com/deepch/vdk")
+				client.Println("24 Type need add next version report https://github.com/jonathan727/vdk")
 			case naluType == 28:
 				fuIndicator := content[offset]
 				fuHeader := content[offset+1]
@@ -522,7 +522,7 @@ func (client *RTSPClient) RTPDemuxer(payloadRAW *[]byte) ([]*av.Packet, bool) {
 			return retmap, true
 		}
 	case client.audioID:
-		client.Println("Audio Unsupported try report to https://github.com/deepch/vdk", padding, extension, timestamp)
+		client.Println("Audio Unsupported try report to https://github.com/jonathan727/vdk", padding, extension, timestamp)
 	default:
 		client.Println("Unsuported Intervaled data packet", int(content[1]), content[offset:end])
 	}
